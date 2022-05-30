@@ -1,33 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 body {
     height: 100%;
     margin: 0px;
+    --navbarBG : #D7DEFA;
+    --lightModeColor : #5E82F4;
+    --lightModeBG : #FFFFFF;
+    --darkmodeBG : #292929;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--lightModeBG);
+    color: white;
 }
-#input {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 240px;
-    margin: auto;
+
+.purple {
+    color : #5E82F4;
+}
+
+.zoom {
+    transition: transform 0.8s;
+}
+
+.zoom:hover {
+    transform: scale(1.06);
+}
+
+#searchBar {
+    margin: 0px;
+    padding: 0px;
+    width: auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    border: 1px solid black;
-    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-#navbar {
-    height: 120px;
+#title {
+    margin-left: 20px;
+    color: var(--darkmodeBG);
+}
+
+#locationIcon {
+    color: white;
+    font-size: 30px;
+}
+
+#yourLocationWeather {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #5E82F4;
+    font-size: 15px;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    width: 240px;
+    height: 40px;
     display: flex;
-    /* border: 1px solid red; */
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-right: 20px;
+    font-size: 17px;
+}
+#navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--navbarBG);
 }
 
+#city {
+    margin: 0px;
+    padding: 0px;
+    height: 30px;
+    width: 240px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    text-indent: 10px;
+    font-size: 18px;
+    border: none;
+}
+
+input:focus{
+    outline: none;
+}
+
+#checkWeather {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background-color: var(--lightModeColor);
+    color:var(--lightModeBG);
+    height: 30px;
+    width: 80px;
+    font-size: 18px;
+    margin-left: -2px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+}
 #main {
+    height: 580px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+#weather {
+    height: 70%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    /* border : 1px solid black; */
-    height: 590px;
-    width: auto;
 }
+
+#forecast {
+    margin: 0px;
+    height: 33%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+#mainWeather {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 330px;
+    width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    position: relative;
+    top: -10px;
+    color: var(--lightModeColor);
+    font-weight: 1000;
+}
+
+#showCity {
+    font-size: 40px;
+    margin: 0px;
+}
+
+#temp {
+    font-size: 90px;
+    margin: 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#weatherType {
+    font-size: 30px;
+    margin: 0px;
+}
+
+
+#detailWeather {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;   
+    border-radius: 30px;
+    height: 350px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+#keys {
+    width: 40%;
+    height: 93%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--lightModeColor);
+}
+
+#values {
+    width: 40%;
+    height: 93%;
+    display: flex;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lightModeColor);
+    color: white;
+}
+
+iframe {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 500px;
+    height: 300px;
+    border-radius: 30px;
+    position: relative;
+    top: -10px;
+}
+
+#footer {
+    color: var(--lightModeColor);
+    font-weight: 900;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+
