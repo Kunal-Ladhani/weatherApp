@@ -61,9 +61,12 @@ body {
     margin-right: 20px;
     font-size: 17px;
 }
+
 #navbar {
-    height: 70px;
-    display: flex;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: auto;
     align-items: center;
     justify-content: space-between;
     background-color: var(--navbarBG);
@@ -100,25 +103,33 @@ input:focus{
     
 }
 #main {
-    height: 580px;
+    height: auto;
     width: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(1,auto);
+    grid-template-columns: repeat(1,auto);
+    gap: auto;
     flex-direction: column;
 
 }
+
 #weather {
-    height: 70%;
-    display: flex;
-    flex-direction: row;
+    /* height: 70%; */
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: auto;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 30px;
 }
 
 #forecast {
     margin: 0px;
-    height: 33%;
-    display: flex;
-    flex-direction: row;
+    /* height: 30%; */
+    display: grid;
+    grid-template-columns: repeat(7,auto);
+    grid-template-rows: repeat(1,auto);
     align-items: center;
     justify-content: center;
     gap: 30px;
@@ -211,4 +222,71 @@ iframe {
 }
 
 
+@media all and (max-width : 480px) {
+    #navbar {
+        grid-template-columns: repeat(1,auto);
+        grid-template-rows: repeat(3,auto);
+        width: 100%;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
 
+    #weather {
+        margin-top: 30px;
+        grid-template-columns: repeat(1,auto);
+        grid-template-rows: repeat(3,auto);
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }    
+
+    
+
+    #forecast {
+        grid-template-columns: repeat(2,auto);
+        grid-template-rows: repeat(7,auto);
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    iframe {
+        width: 90%;
+
+    }
+}
+
+@media all and (min-width : 481px) and (max-width : 1350px) {
+    #navbar {
+        grid-template-columns: repeat(2,auto);
+        grid-template-rows: repeat(2,auto);
+        width: 100%;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+    #weather {
+        margin-top: 30px;
+        grid-template-columns: repeat(1,auto);
+        grid-template-rows: repeat(3,auto);
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }    
+
+    #forecast {
+        grid-template-columns: repeat(3,auto);
+        grid-template-rows: repeat(3,auto);
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    iframe {
+        width: 90%;
+    }
+}
