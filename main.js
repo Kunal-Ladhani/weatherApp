@@ -19,6 +19,7 @@ async function getWeather() {
         let weatherObject = await fetch(url);
         let weatherData = await weatherObject.json();
         
+        console.log(weatherData);
         appendToDOM(weatherData);
         getTenDaysWeather(weatherData.coord.lat,weatherData.coord.lon);
     } catch (err) {
@@ -33,7 +34,8 @@ async function getLocalWeather(lat,lon) {
         
         let weatherObject = await fetch(path);
         let weatherData = await weatherObject.json();
-        
+
+        console.log(weatherData);
         appendToDOM(weatherData);
     } catch(err) {
         console.log(err);
@@ -102,7 +104,7 @@ function appendForecast(data) {
     let container = document.getElementById("forecast");
     container.innerHTML = null;
 
-    console.log(data.daily);
+    // console.log(data.daily);
 
     data.daily.forEach(function(elem) {
         let d = new Date(0);
@@ -112,7 +114,7 @@ function appendForecast(data) {
         let todayDate = new Date();
         
         if(date.getDate() != todayDate.getDate()) {
-            console.log(date);
+            // console.log(date);
  
             let item = document.createElement("div");
             item.style.height = "160px";
